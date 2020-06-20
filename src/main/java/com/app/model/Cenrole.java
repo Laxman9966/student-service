@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQuery(name="Cenrole.getCourseEnrolementsByStudent", query="select ce from Cenrole ce where ce.sid=?1")
+@NamedQuery(name="Cenrole.getCourseEnrolementsByStudent", query="select ce from Cenrole ce where ce.sname=?1")
 @Table(name = "cenrols")
 public class Cenrole {
 	
@@ -20,11 +20,11 @@ public class Cenrole {
 	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "CID")
-	private int cid;
+	@Column(name = "CNAME")
+	private String cname;
 	
-	@Column(name = "SID")
-	private int sid;
+	@Column(name = "SNAME")
+	private String sname;
 	
 	@Column(name = "EDATE")
 	private Date edate;
@@ -38,23 +38,6 @@ public class Cenrole {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public int getCid() {
-		return cid;
-	}
-
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
-
-	public int getSid() {
-		return sid;
-	}
-
-	public void setSid(int sid) {
-		this.sid = sid;
-	}
-
 	
 	public Date getEdate() {
 		return edate;
@@ -64,12 +47,27 @@ public class Cenrole {
 		this.edate = edate;
 	}
 
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
 	@Override
 	public String toString() {
-		return "Cenrole [id=" + id + ", cid=" + cid + ", sid=" + sid + ", edate=" + edate + "]";
+		return "Cenrole [id=" + id + ", cname=" + cname + ", sname=" + sname + ", edate=" + edate + "]";
 	}
-	
-	
+
 	
 	
 	
